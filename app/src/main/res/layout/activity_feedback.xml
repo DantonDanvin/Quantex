@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activitys.Feedback">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarfeedback"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:elevation="4dp"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating"
+            android:layout_gravity="center"
+
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="1"
+
+            android:progressBackgroundTint="#000000"
+            android:progressTint="#CEFFC400"
+
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv"
+            android:text="Rating: 4.0"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedback"
+            android:layout_marginTop="10dp"
+            android:text="Submit"
+            android:backgroundTint="@color/teal_700"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "944955501315",
+    "firebase_url": "https://trading-71b6a-default-rtdb.firebaseio.com",
+    "project_id": "trading-71b6a",
+    "storage_bucket": "trading-71b6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944955501315:android:d6275b283847f4aeac5736",
+        "android_client_info": {
+          "package_name": "com.example.quantex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo8zgDfb_ZH68UmS2PvacpXzjpZ487huo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944955501315:android:2beb3940b6c95e2fac5736",
+        "android_client_info": {
+          "package_name": "com.example.tradingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo8zgDfb_ZH68UmS2PvacpXzjpZ487huo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

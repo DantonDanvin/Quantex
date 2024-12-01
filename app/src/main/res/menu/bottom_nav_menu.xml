@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_Market"
+        android:icon="@drawable/market"
+        android:title="Market" />
+
+    <item
+        android:id="@+id/navigation_Portfolio"
+        android:icon="@drawable/portfolio"
+        android:title="Portfolio" />
+
+    <item
+        android:id="@+id/navigation_crypto"
+        android:icon="@drawable/currency"
+        android:title="Crypto" />
+
+    <item
+        android:id="@+id/navigation_transaction"
+        android:icon="@drawable/transaction"
+        android:title="Transaction" />
+
+    <item
+        android:id="@+id/navigation_Account"
+        android:icon="@drawable/account"
+        android:title="Account" />
+
+</menu>

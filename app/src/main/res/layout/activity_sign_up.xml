@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".authentication.SignUp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:textColor="#BC040405"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/etUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="Manthan Variya"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:padding="9dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#31FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="E-Mail"
+                    android:textColor="#BC040405"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border"
+                    android:hint="XYZ@gmail.com"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:padding="9dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#31FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvpass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Password"
+                    android:textColor="#BC040405"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:ems="10"
+                    android:hint="xxxxxxxxxxxx"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:padding="9dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#31FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvAlreadyAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="8dp"
+                    android:gravity="right"
+                    android:padding="3dp"
+                    android:fontFamily="serif"
+                    android:text="Already have Account"
+                    android:textColor="#BC040405" />
+
+                <Button
+                    android:id="@+id/btn_signUp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#AD1A1B20"
+                    android:padding="15dp"
+                    android:text="sign up"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="25dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGoogle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:elevation="100dp"
+                        android:backgroundTint="#9AFFFFFF"
+                        android:drawableLeft="@drawable/google"
+                        android:padding="12dp"
+                        android:text="Google"
+                        android:textColor="#9C000000"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp" />
+
+                    <Button
+                        android:id="@+id/btn_fb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#800B34C6"
+                        android:drawableLeft="@drawable/facebook"
+                        android:padding="12dp"
+                        android:elevation="100dp"
+                        android:text="facebook"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/signUpPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Sign Up With Phone"
+                    android:textColor="#BC040405"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
