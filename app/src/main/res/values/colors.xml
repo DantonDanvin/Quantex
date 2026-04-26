@@ -1,12 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ======== Brand Primary ======== -->
+    <color name="primary">#6C5CE7</color>
+    <color name="primary_variant">#5A4BD1</color>
+    <color name="on_primary">#FFFFFF</color>
+
+    <!-- ======== Brand Secondary / Accent ======== -->
+    <color name="secondary">#00D2FF</color>
+    <color name="secondary_variant">#00B4D8</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <!-- ======== Surface & Background ======== -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F5F5F7</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_elevated">#FFFFFF</color>
+    <color name="background">#F0F0F5</color>
+    <color name="on_surface">#1A1A2E</color>
+    <color name="on_surface_variant">#6B7280</color>
+
+    <!-- ======== Shimmer ======== -->
+    <color name="shimmer">#E0E0E0</color>
+
+    <!-- ======== Status Colors ======== -->
+    <color name="gain">#00C853</color>
+    <color name="gain_bg">#1A00C853</color>
+    <color name="loss">#FF1744</color>
+    <color name="loss_bg">#1AFF1744</color>
+
+    <!-- ======== Coin Item Gradients ======== -->
+    <color name="card_gradient_start">#F8F9FE</color>
+    <color name="card_gradient_end">#FFFFFF</color>
+
+    <!-- ======== Auth Gradient ======== -->
+    <color name="auth_gradient_start">#1A1A2E</color>
+    <color name="auth_gradient_center">#16213E</color>
+    <color name="auth_gradient_end">#0F3460</color>
+
+    <!-- ======== Splash ======== -->
+    <color name="splash_bg">#1A1A2E</color>
+
+    <!-- ======== Navigation ======== -->
+    <color name="bottom_nav_bg">#FFFFFF</color>
+    <color name="bottom_nav_active">#6C5CE7</color>
+    <color name="bottom_nav_inactive">#9CA3AF</color>
+    <color name="bottom_nav_indicator">#1A6C5CE7</color>
+
+    <!-- ======== Chart ======== -->
+    <color name="chart_line">#6C5CE7</color>
+    <color name="chart_fill">#336C5CE7</color>
+    <color name="chart_bg">#FFFFFF</color>
+
+    <!-- ======== Input Fields ======== -->
+    <color name="input_stroke">#D1D5DB</color>
+    <color name="input_stroke_focused">#6C5CE7</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_hint">#9CA3AF</color>
+
+    <!-- ======== Divider / Line ======== -->
+    <color name="divider">#E5E7EB</color>
+
+    <!-- ======== Shimmer ======== -->
+    <color name="shimmer_base">#E5E7EB</color>
+    <color name="shimmer_highlight">#F3F4F6</color>
+
+    <!-- ======== Dialog ======== -->
+    <color name="dialog_bg">#FFFFFF</color>
+    <color name="dialog_overlay">#80000000</color>
+
+    <!-- ======== Misc ======== -->
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_disabled">#D1D5DB</color>
+
+    <!-- ======== Buy / Sell Buttons ======== -->
+    <color name="buy_button">#00C853</color>
+    <color name="sell_button">#FF1744</color>
+
+    <!-- ======== Drawer ======== -->
+    <color name="drawer_header_start">#6C5CE7</color>
+    <color name="drawer_header_end">#0F3460</color>
+
+    <!-- ======== Time Chip ======== -->
+    <color name="chip_selected_bg">#6C5CE7</color>
+    <color name="chip_selected_text">#FFFFFF</color>
+    <color name="chip_default_bg">#F3F4F6</color>
+    <color name="chip_default_text">#6B7280</color>
+
+    <!-- ======== Legacy (keep for backward compat references) ======== -->
     <color name="purple_200">#FFFFFF</color>
     <color name="purple_500">#FFFFFF</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="black_my">#E4000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="white_my">#EAE9E9</color>
     <color name="white_my_hed">#E2FAFAFA</color>
     <color name="white_table">#60EAE9E9</color>
@@ -15,10 +104,7 @@
     <color name="red_my">#C83232</color>
     <color name="green_my">#30B641</color>
     <color name="liteblue">#AB4FEACC</color>
-    <color name="transparent">#00000000</color>
-    <color name="shimmer">#C9B1B1B1</color>
     <color name="line">#86B1B1B1</color>
-
     <color name="startcolorgradient">#443C20</color>
     <color name="endcolorgradient">#e8a564</color>
 </resources>

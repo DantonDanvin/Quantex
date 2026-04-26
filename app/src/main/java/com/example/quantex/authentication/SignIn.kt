@@ -4,15 +4,11 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.ContextCompat
 import com.example.quantex.MainActivity
 import com.example.quantex.R
-import com.example.quantex.activitys.Settings
-import com.example.quantex.databinding.ActivitySettingsBinding
 import com.example.quantex.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -21,28 +17,24 @@ import com.google.firebase.database.FirebaseDatabase
 class SignIn : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var bindingSet: ActivitySettingsBinding
-    private lateinit var mAuth: FirebaseAuth                // for "bom" authentication. It just take data from user and authenticate.
-    private lateinit var database: FirebaseDatabase         // for realtime database.  After authentication we need to save data in realtime database.
-    private lateinit var progressDialog: ProgressDialog     // create object when user click on signUp button to show dialog box for reload.
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
-        binding = ActivitySignInBinding.inflate(layoutInflater) // use inflate to access all id from xml.
-        setContentView(binding.root) // get the root(path) by id.
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = resources.getColor(R.color.black)
-        window.navigationBarColor = resources.getColor(R.color.black_my)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.auth_gradient_start)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.auth_gradient_end)
 
         mAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
-        // create dialog box
-        progressDialog = ProgressDialog(this).apply {// 'this' is a object can pass perimeter of this class.
-            setTitle("Wait for Login")
-            setMessage("LoggingIn")
+        progressDialog = ProgressDialog(this).apply {
+            setTitle("Signing In")
+            setMessage("Please wait...")
         }
 
         binding.btnSignIn.setOnClickListener {
@@ -52,7 +44,7 @@ class SignIn : AppCompatActivity() {
 
             if (email.isEmpty() || pass.isEmpty()) {
                 progressDialog.dismiss()
-                Toast.makeText(this, "Null value not accept", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -60,9 +52,8 @@ class SignIn : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     progressDialog.dismiss()
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "LogIn successfully", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                        Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     } else {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
@@ -70,36 +61,25 @@ class SignIn : AppCompatActivity() {
                 }
         }
 
-
-
-        // if user click on textView has (Already have Account) so they go on sign in activity.
         binding.tvClickSignUp.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, SignUp::class.java))
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
-        //  if user is already sign in then they go to main activity.
+        // Auto-login if already signed in
         val currentUser: FirebaseUser? = mAuth.currentUser
         if (currentUser != null) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
-
-
     }
 
+    @Suppress("DEPRECATION")
     override fun onBackPressed() {
-//        super.onBackPressed()
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(this, com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog)
             .setTitle("Confirm Exit")
             .setMessage("Are you sure you want to close the app?")
-            .setPositiveButton(android.R.string.yes) { _, _ ->
-                finishAffinity()
-            }
-            .setNegativeButton(android.R.string.no, null)
-            .setIcon(android.R.drawable.ic_dialog_alert)
+            .setPositiveButton("Yes") { _, _ -> finishAffinity() }
+            .setNegativeButton("No", null)
             .show()
     }
-
 }

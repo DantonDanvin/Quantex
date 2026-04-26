@@ -7,7 +7,6 @@
     import android.os.Looper
     import android.view.Menu
     import android.view.MenuItem
-    import android.view.WindowManager
     import android.widget.TextView
     import android.widget.Toast
     import androidx.appcompat.app.ActionBarDrawerToggle
@@ -53,7 +52,8 @@
             setContentView(binding.root)
 
         // Set system bar colors
-        window.statusBarColor = ContextCompat.getColor(this, R.color.black_my)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.splash_bg)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.bottom_nav_bg)
         //window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         // Initialize drawer layout

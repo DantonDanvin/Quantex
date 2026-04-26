@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".fragment.FragMarket">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -20,7 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:indeterminate="true"
-                android:id="@+id/progress_bar"/>
+                android:id="@+id/progress_bar"
+                app:indicatorColor="@color/primary"
+                app:trackColor="@color/surface_variant" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -28,64 +31,101 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Category Chips -->
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="8dp"
+                        android:scrollbars="none"
                         android:id="@+id/horizontal_only">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
 
                             <SearchView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
                                 android:autofillHints="Search news"
                                 android:layout_gravity="center"
-                                android:layout_marginEnd="10dp"
-                                android:id="@+id/searchView"/>
+                                android:layout_marginEnd="12dp"
+                                android:id="@+id/searchView"
+                                android:queryHint="Search news..."
+                                android:iconifiedByDefault="true" />
 
-                            <TextView
+                            <com.google.android.material.chip.Chip
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="36dp"
                                 android:id="@+id/techno"
-                                android:gravity="center"
-                                android:layout_marginEnd="20dp"
-                                android:textStyle="bold"
-                                android:text="Technology"/>
+                                android:text="Technology"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/proxima_nova"
+                                android:textSize="13sp"
+                                app:chipBackgroundColor="@color/surface_card"
+                                app:chipStrokeColor="@color/divider"
+                                app:chipStrokeWidth="1dp"
+                                app:chipCornerRadius="20dp" />
 
-                            <TextView
+                            <com.google.android.material.chip.Chip
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="36dp"
                                 android:id="@+id/buss"
-                                android:gravity="center"
-                                android:textStyle="bold"
-                                android:layout_marginEnd="20dp"
-                                android:text="Business"/>
+                                android:text="Business"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/proxima_nova"
+                                android:textSize="13sp"
+                                app:chipBackgroundColor="@color/surface_card"
+                                app:chipStrokeColor="@color/divider"
+                                app:chipStrokeWidth="1dp"
+                                app:chipCornerRadius="20dp" />
 
                         </LinearLayout>
 
                     </HorizontalScrollView>
 
-                    <LinearLayout
+                    <!-- Section: Top Headlines -->
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/line"/>
+                        android:layout_height="wrap_content"
+                        android:text="Top Headlines"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/circular_std"
+                        android:textColor="@color/on_surface"
+                        android:paddingStart="16dp"
+                        android:paddingBottom="8dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
+                        android:padding="4dp"
                         android:id="@+id/newsHRecyclerView" />
 
+                    <!-- Section: Crypto News -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Crypto News"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/circular_std"
+                        android:textColor="@color/on_surface"
+                        android:paddingStart="16dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="8dp" />
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
+                        android:padding="4dp"
                         android:id="@+id/newsVRecyclerView" />
 
                 </LinearLayout>

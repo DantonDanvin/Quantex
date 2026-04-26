@@ -1,185 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:fillViewport="true"
     tools:context=".authentication.SignUp">
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="40dp">
 
-        <LinearLayout
+        <!-- App Branding -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantex"
+            android:textStyle="bold"
+            android:fontFamily="@font/circular_std"
+            android:textColor="@color/primary"
+            android:textSize="36sp"
+            android:letterSpacing="0.03" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp"
+            android:text="Create your account"
+            android:fontFamily="@font/proxima_nova"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="16sp" />
+
+        <!-- Name Field -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Full Name"
+            style="@style/Quantex.TextInputLayout"
+            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+            app:startIconTint="@color/on_surface_variant">
 
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:inputType="textPersonName"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/on_surface"
+                android:textColorHint="@color/input_hint" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/tvname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="25dp"
-                    android:textColor="#BC040405"
-                    android:textStyle="bold" />
+        <!-- Email Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="E-Mail"
+            style="@style/Quantex.TextInputLayout"
+            app:startIconDrawable="@android:drawable/sym_action_email"
+            app:startIconTint="@color/on_surface_variant">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/on_surface"
+                android:textColorHint="@color/input_hint" />
 
-                <EditText
-                    android:id="@+id/etUserName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:ems="10"
-                    android:hint="Manthan Variya"
-                    android:layout_marginBottom="10dp"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    android:padding="9dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#31FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/tvemail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="E-Mail"
-                    android:textColor="#BC040405"
-                    android:textStyle="bold" />
+        <!-- Password Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Password"
+            style="@style/Quantex.TextInputLayout"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconTint="@color/on_surface_variant">
 
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/border"
-                    android:hint="XYZ@gmail.com"
-                    android:inputType="textEmailAddress"
-                    android:minHeight="48dp"
-                    android:padding="9dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#31FFFFFF" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/on_surface"
+                android:textColorHint="@color/input_hint" />
 
-                <TextView
-                    android:id="@+id/tvpass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="Password"
-                    android:textColor="#BC040405"
-                    android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:ems="10"
-                    android:hint="xxxxxxxxxxxx"
-                    android:inputType="textPassword"
-                    android:minHeight="48dp"
-                    android:padding="9dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#31FFFFFF" />
+        <!-- Already have account -->
+        <TextView
+            android:id="@+id/tvAlreadyAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="end"
+            android:padding="4dp"
+            android:text="Already have an account? Sign In"
+            android:fontFamily="@font/proxima_nova"
+            android:textColor="@color/secondary"
+            android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/tvAlreadyAccount"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="8dp"
-                    android:gravity="right"
-                    android:padding="3dp"
-                    android:fontFamily="serif"
-                    android:text="Already have Account"
-                    android:textColor="#BC040405" />
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/btn_signUp"
+            style="@style/Quantex.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Create Account"
+            android:textSize="16sp" />
 
-                <Button
-                    android:id="@+id/btn_signUp"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="#AD1A1B20"
-                    android:padding="15dp"
-                    android:text="sign up"
-                    android:textColor="#FFFFFF"
-                    app:cornerRadius="25dp" />
+        <!-- Divider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp"
-                    android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/divider" />
 
-                    <Button
-                        android:id="@+id/btnGoogle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1"
-                        android:elevation="100dp"
-                        android:backgroundTint="#9AFFFFFF"
-                        android:drawableLeft="@drawable/google"
-                        android:padding="12dp"
-                        android:text="Google"
-                        android:textColor="#9C000000"
-                        android:textStyle="bold"
-                        app:cornerRadius="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="or continue with"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="12sp" />
 
-                    <Button
-                        android:id="@+id/btn_fb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#800B34C6"
-                        android:drawableLeft="@drawable/facebook"
-                        android:padding="12dp"
-                        android:elevation="100dp"
-                        android:text="facebook"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        app:cornerRadius="10dp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/signUpPhone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="Sign Up With Phone"
-                    android:textColor="#BC040405"
-                    android:textSize="18dp" />
-
-
-            </LinearLayout>
-
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/divider" />
 
         </LinearLayout>
 
-    </ScrollView>
+        <!-- Social Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-</LinearLayout>
+            <Button
+                android:id="@+id/btnGoogle"
+                style="@style/Quantex.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:drawableStart="@drawable/google"
+                android:drawablePadding="8dp"
+                android:text="Google"
+                android:textAllCaps="false"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_fb"
+                style="@style/Quantex.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/facebook"
+                android:drawablePadding="8dp"
+                android:text="Facebook"
+                android:textAllCaps="false"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,9 +1,181 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Quantex" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
 
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/splash_bg</item>
+        <item name="android:navigationBarColor">@color/bottom_nav_bg</item>
+
+        <!-- Text input -->
+        <item name="textInputStyle">@style/Quantex.TextInputLayout</item>
+
+        <!-- Bottom Navigation -->
+        <item name="bottomNavigationStyle">@style/Quantex.BottomNavigation</item>
     </style>
 
     <style name="Theme.Quantex" parent="Base.Theme.Quantex" />
+
+    <!-- ======== Text Appearances ======== -->
+    <style name="Quantex.TextAppearance.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/on_surface_variant</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="Quantex.TextAppearance.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/on_surface_variant</item>
+    </style>
+
+    <!-- ======== Text Input ======== -->
+    <style name="Quantex.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/input_stroke_focused</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="hintTextColor">@color/primary</item>
+    </style>
+
+    <!-- ======== Buttons ======== -->
+    <style name="Quantex.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Quantex.Button.Buy" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/buy_button</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+    </style>
+
+    <style name="Quantex.Button.Sell" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/sell_button</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/circular_std</item>
+        <item name="android:fontFamily">@font/circular_std</item>
+    </style>
+
+    <style name="Quantex.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="strokeColor">@color/input_stroke</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="fontFamily">@font/proxima_nova</item>
+        <item name="android:fontFamily">@font/proxima_nova</item>
+    </style>
+
+    <!-- ======== Cards ======== -->
+    <style name="Quantex.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/surface_card</item>
+    </style>
+
+    <style name="Quantex.Card.Elevated" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/surface_card</item>
+    </style>
+
+    <!-- ======== Bottom Navigation ======== -->
+    <style name="Quantex.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="itemActiveIndicatorStyle">@style/Quantex.BottomNav.Indicator</item>
+        <item name="android:background">@color/bottom_nav_bg</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="elevation">8dp</item>
+    </style>
+
+    <style name="Quantex.BottomNav.Indicator" parent="">
+        <item name="android:color">@color/bottom_nav_indicator</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+    </style>
+
+    <!-- ======== Toolbar ======== -->
+    <style name="Quantex.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/Quantex.TextAppearance.TitleLarge</item>
+        <item name="android:background">@color/surface</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <!-- ======== Chip (Time selector) ======== -->
+    <style name="Quantex.Chip" parent="Widget.Material3.Chip.Assist">
+        <item name="chipCornerRadius">8dp</item>
+        <item name="chipBackgroundColor">@color/chip_default_bg</item>
+        <item name="android:textColor">@color/chip_default_text</item>
+        <item name="chipMinHeight">36dp</item>
+    </style>
+
 </resources>

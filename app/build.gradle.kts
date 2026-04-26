@@ -50,40 +50,38 @@ dependencies {
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
 
-    // show PNG image from API.
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    // Lifecycle - for lifecycleScope in Activities & Fragments
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
-    // show both SVG and PNG image from API.
+    // Coil for image loading (SVG + PNG) - replaces Glide & Picasso
     implementation ("io.coil-kt:coil:2.6.0")
     implementation ("io.coil-kt:coil-svg:2.6.0")
 
-    // for firebase
-    implementation (platform("com.google.firebase:firebase-bom:32.7.4")) // firebase BOM.
-    implementation ("com.google.firebase:firebase-analytics") // firebase analytics.
-    implementation ("com.google.firebase:firebase-auth") // fire authentication.
-    implementation ("com.google.firebase:firebase-database") // realtime database.
-    implementation ("com.google.firebase:firebase-firestore") // fireStore.
+    // Firebase (BOM manages ALL versions)
+    implementation (platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation ("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-database")
+    implementation ("com.google.firebase:firebase-firestore")
 
-    // for graph.
+    // Chart
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
-    // for shimmer effect.
+    // Shimmer effect
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
 
-    // for image in news.
+    // News - Picasso still needed for NewsHAdapter/NewsVAdapter image loading
     implementation ("com.squareup.picasso:picasso:2.8")
-    // for news Article
+    // News API
     implementation ("com.github.KwabenBerko:News-API-Java:1.0.2")
 
-    // retrofit api call.
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    // Retrofit + Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.code.gson:gson:2.8.8") // JSON api
+    implementation ("com.google.code.gson:gson:2.10.1")
 
-    // on swap down refresh
+    // SwipeRefreshLayout
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-
 }

@@ -5,10 +5,9 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.example.quantex.R
 import com.example.quantex.databinding.ActivityContactUsBinding
 
@@ -18,21 +17,16 @@ class ContactUs : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contact_us)
         binding = ActivityContactUsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = resources.getColor(R.color.black)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.splash_bg)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.bottom_nav_bg)
 
-        // Toolbar
-        val toolbar: Toolbar = findViewById(R.id.toolbarcontactus)
+        val toolbar: Toolbar = binding.toolbarcontactus
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable the back button
-        // Get the custom toolbar layout
-        val customToolbar: View = layoutInflater.inflate(R.layout.custom_toolbar_contactus, toolbar, false)
-        // Set the custom toolbar layout as the toolbar's layout
-        toolbar.addView(customToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""
 
         binding.send.setOnClickListener {
             val subject = binding.subject.text.toString().trim()
@@ -45,9 +39,7 @@ class ContactUs : AppCompatActivity() {
                 Toast.makeText(this, "Please add some Message", Toast.LENGTH_SHORT).show()
             } else {
                 val mail = "mailto:$email?&subject=${Uri.encode(subject)}&body=${Uri.encode(message)}"
-                val intent = Intent(Intent.ACTION_SENDTO).apply {
-                    data = Uri.parse(mail)
-                }
+                val intent = Intent(Intent.ACTION_SENDTO).apply { data = Uri.parse(mail) }
                 try {
                     startActivity(Intent.createChooser(intent, "Send Email.."))
                     Toast.makeText(this, "Email sent", Toast.LENGTH_SHORT).show()
@@ -56,25 +48,19 @@ class ContactUs : AppCompatActivity() {
                 }
             }
         }
-
-
     }
 
+    @Suppress("DEPRECATION")
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 
-
-    // go back
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == android.R.id.home) {
-            onBackPressed() // Go back to the previous activity
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            @Suppress("DEPRECATION")
+            onBackPressed()
             true
-        } else {
-            super.onOptionsItemSelected(item)
-        }
+        } else super.onOptionsItemSelected(item)
     }
-
 }

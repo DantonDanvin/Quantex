@@ -1,191 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Username shimmer -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="20dp">
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+            <View android:layout_width="180dp" android:layout_height="18dp" android:background="@drawable/shimmer_placeholder" />
+            <View android:layout_width="220dp" android:layout_height="14dp" android:layout_marginTop="10dp" android:background="@drawable/shimmer_placeholder" />
 
-            <TextView
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"
-                android:textSize="15dp"
-                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/shimmer"
-                android:textColor="@color/liteblue"
-                android:textSize="13dp"
-                android:textStyle="bold" />
+    <!-- Balance Card shimmer -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
 
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:stretchColumns="*">
+            <View android:layout_width="100dp" android:layout_height="14dp" android:background="@drawable/shimmer_placeholder" />
+            <View android:layout_width="160dp" android:layout_height="28dp" android:layout_marginTop="8dp" android:background="@drawable/shimmer_placeholder" />
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
+    <!-- Stats Grid shimmer -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-                    </TableRow>
+            <View android:layout_width="120dp" android:layout_height="16dp" android:background="@drawable/shimmer_placeholder" android:layout_marginBottom="16dp" />
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+            <!-- Row 1 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
+            <!-- Row 2 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textColor="@color/green_my"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textColor="@color/green_my"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="13dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/shimmer"
-                            android:textColor="@color/red_my"
-                            android:textSize="13dp"
-                            android:textStyle="bold" />
-
-                    </TableRow>
-
-                </TableLayout>
-
+            <!-- Row 3 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
             </LinearLayout>
 
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

@@ -1,770 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
-
-    <LinearLayout
+    <!-- Shimmer Card 1 -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:orientation="horizontal">
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
-        <TextView
-            android:layout_width="160dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/shimmer"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    </LinearLayout>
+            <!-- Title shimmer -->
+            <View
+                android:layout_width="140dp"
+                android:layout_height="16dp"
+                android:background="@drawable/shimmer_placeholder" />
 
-    <TableLayout
+            <!-- Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
+
+            <!-- Badge row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <View android:layout_width="60dp" android:layout_height="20dp" android:layout_marginEnd="12dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" />
+                <View android:layout_width="60dp" android:layout_height="20dp" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Shimmer Card 2 -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="5dp"
-        android:stretchColumns="*">
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:background="@color/shimmer"/>
+            <View android:layout_width="140dp" android:layout_height="16dp" android:background="@drawable/shimmer_placeholder" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:background="@color/shimmer"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="14dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:background="@color/shimmer"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/shimmer" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="60dp" android:layout_height="20dp" android:layout_marginEnd="12dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" />
+                <View android:layout_width="60dp" android:layout_height="20dp" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-        </TableRow>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:background="@color/shimmer"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:background="@color/shimmer"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:background="@color/shimmer"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/shimmer" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <LinearLayout
+    <!-- Shimmer Card 3 -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingTop="1dp"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/shimmer"/>
+        android:layout_marginBottom="12dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="end"
-            android:layout_marginEnd="70dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"
-                android:paddingTop="1dp" />
+            <View android:layout_width="140dp" android:layout_height="16dp" android:background="@drawable/shimmer_placeholder" />
 
-        </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="14dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginEnd="70dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/shimmer"
-                    android:paddingTop="1dp" />
-
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="60dp" android:layout_height="20dp" android:layout_marginEnd="12dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" />
+                <View android:layout_width="60dp" android:layout_height="20dp" android:background="@drawable/shimmer_placeholder" />
             </LinearLayout>
 
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-    <LinearLayout
+    <!-- Shimmer Card 4 -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
+            <View android:layout_width="140dp" android:layout_height="16dp" android:background="@drawable/shimmer_placeholder" />
 
-        </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="14dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp"
-            android:stretchColumns="*">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="0dp" android:layout_height="14dp" android:layout_weight="1" android:background="@drawable/shimmer_placeholder" />
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginEnd="70dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/shimmer"
-                    android:paddingTop="1dp" />
-
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
+                <View android:layout_width="60dp" android:layout_height="20dp" android:layout_marginEnd="12dp" android:background="@drawable/shimmer_placeholder" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" />
+                <View android:layout_width="60dp" android:layout_height="20dp" android:background="@drawable/shimmer_placeholder" />
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginEnd="70dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/shimmer"
-                    android:paddingTop="1dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginEnd="70dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/shimmer"
-                    android:paddingTop="1dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="103dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bordergraph"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/shimmer"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/shimmer" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="1dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/shimmer"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginEnd="70dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/shimmer"
-                    android:paddingTop="1dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

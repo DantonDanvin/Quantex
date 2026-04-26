@@ -7,15 +7,15 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.quantex.R
 import com.example.quantex.ThemeUtils
 import com.example.quantex.authentication.SignIn
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashScreen : AppCompatActivity() {
 
@@ -23,49 +23,40 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // Hide the status bar
-        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-
-        // Set navigation bar color
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.navigationBarColor = ContextCompat.getColor(this, R.color.black_my)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.splash_bg)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.splash_bg)
 
         checkNetworkConnection()
-
     }
 
     private fun checkNetworkConnection() {
         if (!isNetworkAvailable(this)) {
             Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show()
-            // Check network connection every 3 seconds
-            Handler(Looper.getMainLooper()).postDelayed({
+            // Use lifecycleScope instead of Handler
+            lifecycleScope.launch {
+                delay(3000)
                 checkNetworkConnection()
-            }, 3000)
+            }
         } else {
             internetConnectionTrue()
         }
     }
 
     private fun internetConnectionTrue() {
-//         Start the SignIn activity after a delay
-        Handler(Looper.getMainLooper()).postDelayed({
-
-//            Theme change.
-            val isNightMode = ThemeUtils.loadNightModePref(this)
+        lifecycleScope.launch {
+            delay(600)
+            // Theme change
+            val isNightMode = ThemeUtils.loadNightModePref(this@SplashScreen)
             if (isNightMode) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
-
-            val intent = Intent(this, SignIn::class.java)
-            startActivity(intent)
-            finish() // Ensure the splash screen is not shown again
-        }, 600) // 1000 milliseconds = 1 seconds
-
+            startActivity(Intent(this@SplashScreen, SignIn::class.java))
+            finish()
+        }
     }
 
-    // check network connection.
     private fun isNetworkAvailable(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -83,5 +74,4 @@ class SplashScreen : AppCompatActivity() {
             return networkInfo.isConnected
         }
     }
-
 }

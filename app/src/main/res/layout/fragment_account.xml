@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
+    android:background="@color/background"
     tools:context=".fragment.FragAccount">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -16,204 +16,256 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/body"
+            <!-- Body -->
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/mail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Mail"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/ad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Want more in-app money? Tap here to watch an ad."
-                    android:textColor="@color/liteblue"
-                    android:textSize="13dp"
-                    android:textStyle="bold" />
+                android:id="@+id/body"
+                android:fillViewport="true">
 
                 <LinearLayout
-                    android:id="@+id/coinhistory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                    <TableLayout
-                        android:id="@+id/tablelayout"
-                        android:layout_width="wrap_content"
+                    <!-- User Header Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:stretchColumns="*">
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        app:cardBackgroundColor="@color/surface_card">
 
-                        <TableRow
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:orientation="vertical"
+                            android:padding="20dp">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/username"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Starting Investment"
-                                android:textSize="13dp" />
+                                android:text="Account Summary"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/on_surface"
+                                android:fontFamily="@font/circular_std" />
 
                             <TextView
-                                android:id="@+id/UUID"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/mail"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="$20000"
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
+                                android:layout_marginTop="4dp"
+                                android:text="E-mail: Loading..."
+                                android:textSize="14sp"
+                                android:textColor="@color/on_surface_variant"
+                                android:fontFamily="@font/proxima_nova" />
 
-                        </TableRow>
+                        </LinearLayout>
 
-                        <TableRow
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Funds Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        app:cardBackgroundColor="@color/surface_card">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:orientation="vertical"
+                            android:padding="20dp"
+                            android:gravity="center">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Money from Ads"
-                                android:textSize="13dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="$0"
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
-
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Available Cash"
-                                android:textSize="13dp" />
+                                android:text="Available Balance"
+                                android:textSize="13sp"
+                                android:textColor="@color/on_surface_variant"
+                                android:fontFamily="@font/proxima_nova" />
 
                             <TextView
                                 android:id="@+id/funds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=""
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
+                                android:layout_marginTop="6dp"
+                                android:text="$0"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                android:fontFamily="@font/circular_std" />
 
-                        </TableRow>
+                        </LinearLayout>
 
-                        <TableRow
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Transaction Stats Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/divider"
+                        app:cardBackgroundColor="@color/surface_card">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                            android:orientation="vertical"
+                            android:padding="20dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Total Transactions"
-                                android:textSize="13dp" />
+                                android:text="Transaction Statistics"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/on_surface"
+                                android:fontFamily="@font/circular_std"
+                                android:layout_marginBottom="16dp" />
 
-                            <TextView
-                                android:id="@+id/totaltrans"
-                                android:layout_width="wrap_content"
+                            <!-- Stats Grid -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
+                                android:orientation="horizontal">
 
-                        </TableRow>
+                                <!-- Total -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                                    <TextView
+                                        android:id="@+id/totaltrans"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/on_surface"
+                                        android:fontFamily="@font/circular_std" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Positive Transactions"
-                                android:textColor="@color/green_my"
-                                android:textSize="13dp" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/on_surface_variant"
+                                        android:fontFamily="@font/proxima_nova" />
 
-                            <TextView
-                                android:id="@+id/positivetrans"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textColor="@color/green_my"
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
+                                </LinearLayout>
 
-                        </TableRow>
+                                <!-- Separator -->
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/divider" />
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp">
+                                <!-- Profitable -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Negative Transactions"
-                                android:textColor="@color/red_my"
-                                android:textSize="13dp" />
+                                    <TextView
+                                        android:id="@+id/positivetrans"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/gain"
+                                        android:fontFamily="@font/circular_std" />
 
-                            <TextView
-                                android:id="@+id/negativetrans"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textColor="@color/red_my"
-                                android:textSize="13dp"
-                                android:textStyle="bold" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Profitable"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/on_surface_variant"
+                                        android:fontFamily="@font/proxima_nova" />
 
-                        </TableRow>
+                                </LinearLayout>
 
-                    </TableLayout>
+                                <!-- Separator -->
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/divider" />
+
+                                <!-- Loss -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/negativetrans"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/loss"
+                                        android:fontFamily="@font/circular_std" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Loss"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/on_surface_variant"
+                                        android:fontFamily="@font/proxima_nova" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </ScrollView>
 
+            <!-- Shimmer -->
             <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/account_shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:shimmer_duration="1000">
+                android:id="@+id/account_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:shimmer_auto_start="true"
+                app:shimmer_duration="1200"
+                app:shimmer_base_alpha="0.7"
+                app:shimmer_highlight_alpha="1.0">
 
-        <include
-            android:id="@+id/shimmer_view_container"
-            layout="@layout/fragment_account_shimmer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                <include
+                    android:id="@+id/shimmer_view_container"
+                    layout="@layout/fragment_account_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
         </RelativeLayout>
 

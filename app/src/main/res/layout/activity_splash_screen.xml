@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6000000"
+    android:background="@color/splash_bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".activitys.SplashScreen">
@@ -12,17 +11,28 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stock Trainer"
+        android:text="Quantex"
         android:textStyle="bold"
-        android:textColor="@color/white_my"
-        android:textSize="40dp"/>
+        android:fontFamily="@font/circular_std"
+        android:textColor="@color/primary"
+        android:textSize="44sp"
+        android:letterSpacing="0.05" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Virtual Trading App"
-        android:textStyle="bold"
-        android:textColor="#E2EAE9E9"
-        android:textSize="22dp"/>
+        android:layout_marginTop="8dp"
+        android:text="Virtual Trading Simulator"
+        android:fontFamily="@font/proxima_nova"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="16sp"
+        android:letterSpacing="0.1" />
+
+    <ProgressBar
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/primary" />
 
 </LinearLayout>

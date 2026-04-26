@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".fragment.FragPortfolio">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -20,57 +21,65 @@
                 android:layout_height="match_parent"
                 android:id="@+id/body">
 
-            <ImageView
-                android:id="@+id/nothingimg"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/nothing"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toTopOf="@+id/nothingtext"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                <ImageView
+                    android:id="@+id/nothingimg"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/nothing"
+                    android:alpha="0.5"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/nothingtext"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
 
-            <TextView
-                android:id="@+id/nothingtext"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:visibility="invisible"
-                android:text="You do not have any Coins in your portfolio. \n Please touch 'Crypto Currency' to find and \n add Coins to your Portfolio. "
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/nothingtext"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:fontFamily="@font/proxima_nova"
+                    android:textColor="@color/on_surface_variant"
+                    android:text="Your portfolio is empty.\nGo to Crypto to add coins."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewport"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/portfoliotemplate" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerviewport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clipToPadding="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/portfoliotemplate" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/portfolio_shimmer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:shimmer_duration="1000">
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/portfolio_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:shimmer_auto_start="true"
+                app:shimmer_duration="1200"
+                app:shimmer_base_alpha="0.7"
+                app:shimmer_highlight_alpha="1.0">
 
-        <include
-            android:id="@+id/shimmer_view_container"
-            layout="@layout/fragment_portfolio_shimmer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                <include
+                    android:id="@+id/shimmer_view_container"
+                    layout="@layout/fragment_portfolio_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
         </RelativeLayout>
 

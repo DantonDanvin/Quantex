@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.example.quantex.R
 import com.example.quantex.databinding.ActivityFeedbackBinding
-import com.example.quantex.databinding.ActivitySettingsBinding
 
 class Feedback : AppCompatActivity() {
 
@@ -21,30 +20,24 @@ class Feedback : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feedback)
         binding = ActivityFeedbackBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = resources.getColor(R.color.black)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.splash_bg)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.bottom_nav_bg)
 
-        // Toolbar
-        val toolbar: Toolbar = findViewById(R.id.toolbarfeedback)
+        val toolbar: Toolbar = binding.toolbarfeedback
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) // Enable the back button
-        // Get the custom toolbar layout
-        val customToolbar: View = layoutInflater.inflate(R.layout.custom_toolbar_feedback, toolbar, false)
-        // Set the custom toolbar layout as the toolbar's layout
-        toolbar.addView(customToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""
 
-
-        binding.rating.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+        binding.rating.setOnRatingBarChangeListener { _, rating, _ ->
             binding.tv.text = "Rating: $rating"
-            rate = if (rating == 5.0f || rating == 4.0f) 5 else 0
+            rate = if (rating >= 4.0f) 5 else 0
         }
 
         binding.feedback.setOnClickListener {
-            if (rate == 5 || rate == 4) {
+            if (rate >= 4) {
                 playWinnerSound()
                 startCelebrationAnimation(binding.root)
             }
@@ -52,9 +45,7 @@ class Feedback : AppCompatActivity() {
             binding.feedback.visibility = View.GONE
             binding.rating.setIsIndicator(true)
         }
-
     }
-
 
     private fun playWinnerSound() {
         mediaPlayer = MediaPlayer.create(this, R.raw.goodresult)
@@ -72,22 +63,17 @@ class Feedback : AppCompatActivity() {
         mediaPlayer = null
     }
 
-
+    @Suppress("DEPRECATION")
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 
-
-    // go back
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == android.R.id.home) {
-            onBackPressed() // Go back to the previous activity
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            @Suppress("DEPRECATION")
+            onBackPressed()
             true
-        } else {
-            super.onOptionsItemSelected(item)
-        }
+        } else super.onOptionsItemSelected(item)
     }
-
 }

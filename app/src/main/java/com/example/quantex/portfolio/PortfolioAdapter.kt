@@ -22,7 +22,7 @@ class PortfolioAdapter(
     override fun onBindViewHolder(holder: PortfolioViewHolder, position: Int) {
         val portfolioItem = portfolio[position]
         holder.bind(portfolioItem, listener)
-        fadeInAnimation(holder.itemView) // show recycler item in animation.
+        fadeInAnimation(holder.itemView)
     }
 
     override fun getItemCount(): Int = portfolio.size
@@ -31,7 +31,6 @@ class PortfolioAdapter(
         fun onItemClick(portfolio: Portfolio)
     }
 
-    // find resource
     class PortfolioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameAndsymbol: TextView = itemView.findViewById(R.id.nameAndsymbol)
         private val currentprice: TextView = itemView.findViewById(R.id.currentprice)
@@ -41,10 +40,9 @@ class PortfolioAdapter(
         private val pnl: TextView = itemView.findViewById(R.id.pnl)
         private val totalpnl: TextView = itemView.findViewById(R.id.totalpandl)
 
-        // set data
         fun bind(portfolio: Portfolio, listener: OnItemClickListener) {
             nameAndsymbol.text = portfolio.nameAndSymbol
-            nameAndsymbol.setSelected(true)
+            nameAndsymbol.isSelected = true
             currentprice.text = "$${portfolio.currentPrice}"
             buyprice.text = "$${portfolio.buyPrice}"
             quantity.text = portfolio.quantity
@@ -56,29 +54,24 @@ class PortfolioAdapter(
             val pricePerUnit = portfolio.buyPrice.toDouble()
 
             if (price < pricePerUnit) {
-                val redColor = ContextCompat.getColor(itemView.context, R.color.red)
-                nameAndsymbol.setBackgroundColor(redColor)
-                pnl.setTextColor(redColor)
-                totalpnl.setTextColor(redColor)
+                val lossColor = ContextCompat.getColor(itemView.context, R.color.loss)
+                pnl.setTextColor(lossColor)
+                pnl.setBackgroundResource(R.drawable.loss_badge_bg)
+                totalpnl.setTextColor(lossColor)
             } else {
-                val greenColor = ContextCompat.getColor(itemView.context, R.color.green)
-                val greenColorMY = ContextCompat.getColor(itemView.context, R.color.green_my)
-                nameAndsymbol.setBackgroundColor(greenColor)
-                pnl.setTextColor(greenColorMY)
-                totalpnl.setTextColor(greenColorMY)
+                val gainColor = ContextCompat.getColor(itemView.context, R.color.gain)
+                pnl.setTextColor(gainColor)
+                pnl.setBackgroundResource(R.drawable.gain_badge_bg)
+                totalpnl.setTextColor(gainColor)
             }
 
-//             Set item click listener
             itemView.setOnClickListener { listener.onItemClick(portfolio) }
         }
     }
 
-    // show recycler item in animation.
     companion object {
         fun fadeInAnimation(view: View) {
-            val anim = AlphaAnimation(0.0f, 1.0f).apply {
-                duration = 800 // Set the duration of the animation in milliseconds
-            }
+            val anim = AlphaAnimation(0.0f, 1.0f).apply { duration = 500 }
             view.startAnimation(anim)
         }
     }

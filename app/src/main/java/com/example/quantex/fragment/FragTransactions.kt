@@ -1,13 +1,12 @@
 package com.example.quantex.fragment
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -17,10 +16,7 @@ import com.example.quantex.transactions.TransactionAdapter
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import kotlin.math.roundToLong
 
 class FragTransactions : Fragment() {
@@ -33,8 +29,8 @@ class FragTransactions : Fragment() {
     private lateinit var adapter: TransactionAdapter
     private lateinit var db: FirebaseFirestore
     private var userId: String = ""
-    private var coinName: String = ""
     private val transaction = mutableMapOf<String, Any>()
+    private var loadJob: Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,22 +38,17 @@ class FragTransactions : Fragment() {
     ): View {
         binding = FragmentTransactionsBinding.inflate(inflater, container, false)
 
-        // find shimmer.
         shimmerFrameLayout = binding.transactionShimmer
         shimmerFrameLayout.startShimmer()
         shimmerFrameLayout.visibility = View.VISIBLE
         swipeToRefresh = binding.swipeRefreshLayout
 
         db = FirebaseFirestore.getInstance()
-
         recyclerView = binding.recyclerviewtrans
 
-        // Get current user ID
         val currentUser = FirebaseAuth.getInstance().currentUser
-        userId = currentUser?.uid ?: "" // get user UID
+        userId = currentUser?.uid ?: ""
 
-
-        // reload Transaction data.
         swipeToRefresh.setOnRefreshListener {
             shimmerFrameLayout.startShimmer()
             shimmerFrameLayout.visibility = View.VISIBLE
@@ -73,77 +64,69 @@ class FragTransactions : Fragment() {
     }
 
     private fun loadTransactionData() {
-
         db.collection("Users").document(userId).collection("Transaction")
-            .whereEqualTo("flag", "true")
-            .get()
+            .whereEqualTo("flag", "true").get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     transaction.clear()
                     for (document in task.result) {
                         transaction[document.id] = document.data
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(requireContext(), "${task.exception}", Toast.LENGTH_SHORT).show()
                 }
             }
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        // Use lifecycleScope instead of Handler
+        loadJob?.cancel()
+        loadJob = viewLifecycleOwner.lifecycleScope.launch {
+            delay(3000)
             shimmerFrameLayout.stopShimmer()
             shimmerFrameLayout.visibility = View.GONE
             binding.body.visibility = View.VISIBLE
 
-            if(transaction.isEmpty()){
+            if (transaction.isEmpty()) {
                 binding.nothingimg.visibility = View.VISIBLE
                 binding.nothingtext.visibility = View.VISIBLE
-            }
-            else {
+            } else {
                 binding.nothingimg.visibility = View.GONE
                 binding.nothingtext.visibility = View.GONE
             }
 
             transactionItem.clear()
-
-            for ((transactionId, transactionData) in transaction) {
+            for ((_, transactionData) in transaction) {
                 @Suppress("UNCHECKED_CAST")
                 val data = transactionData as Map<String, Any>
                 val symbol = data["CoinSymbol"] as String
                 var nameAndSymbol = data["CoinName"] as String
-                coinName = data["CoinName"] as String
+                val coinName = data["CoinName"] as String
                 nameAndSymbol += " - $symbol"
                 val transactionType = data["BuyOrSell"] as String
                 val gainOrLoss = data["gainORloss"] as String
                 var totalPandL = data["totalpandl"] as String
                 val dotIndex1 = totalPandL.indexOf('.')
-                if (dotIndex1 != -1) {
-                    totalPandL = totalPandL.substring(0, dotIndex1 + 2)
-                }
+                if (dotIndex1 != -1) totalPandL = totalPandL.substring(0, dotIndex1 + 2)
                 val date = data["Transaction Date"] as String
                 val pricePerUnit = data["Price per Coin"] as String
                 val quantity = data["Quantity"] as String
-                val quantityDouble = quantity.toDouble()
-                val pricePerUnitDouble = pricePerUnit.toDouble()
-                val total = quantityDouble * pricePerUnitDouble
-                val roundedDebit = total.roundToLong()
-                val totalString = roundedDebit.toString()
+                val total = quantity.toDouble() * pricePerUnit.toDouble()
+                val totalString = total.roundToLong().toString()
 
                 transactionItem.add(Transaction(nameAndSymbol, transactionType, date, "$$pricePerUnit", quantity, "$$totalString", coinName, gainOrLoss, totalPandL))
             }
 
-            // Set up RecyclerView
             recyclerView.layoutManager = LinearLayoutManager(context)
             adapter = TransactionAdapter(transactionItem, object : TransactionAdapter.OnItemClickListener {
-                override fun onItemClick(transaction: Transaction) {   // on recycler item select.
+                override fun onItemClick(transaction: Transaction) {
                     Toast.makeText(requireContext(), transaction.coinName, Toast.LENGTH_SHORT).show()
                 }
             })
             recyclerView.adapter = adapter
-
-
-        }, 3000)
-
+        }
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        loadJob?.cancel()
+    }
 }

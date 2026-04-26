@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".market_news.NewsDetail">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarnewsdetail"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:elevation="4dp"
+        android:layout_height="56dp"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:title="News"
+        app:titleTextAppearance="@style/Quantex.TextAppearance.TitleLarge"
+        app:titleTextColor="@color/on_surface"
         app:navigationIcon="?attr/homeAsUpIndicator" />
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -19,15 +24,12 @@
         android:layout_height="wrap_content"
         android:indeterminate="true"
         android:id="@+id/progress_bar"
-        android:layout_below="@+id/app_title"/>
+        app:indicatorColor="@color/primary"
+        app:trackColor="@color/surface_variant" />
 
     <WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/progress_bar"
-        />
-
-
+        android:layout_height="match_parent" />
 
 </LinearLayout>

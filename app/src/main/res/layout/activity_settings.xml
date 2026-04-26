@@ -5,20 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".activitys.Settings">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarsettings"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:elevation="4dp"
+        android:layout_height="56dp"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:title="Settings"
+        app:titleTextAppearance="@style/Quantex.TextAppearance.TitleLarge"
+        app:titleTextColor="@color/on_surface"
         app:navigationIcon="?attr/homeAsUpIndicator" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/themeSwitch"
-        android:layout_width="wrap_content"
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:text="Dark Mode   "/>
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/divider"
+        app:cardBackgroundColor="@color/surface_card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Mode"
+                    android:textSize="16sp"
+                    android:textColor="@color/on_surface"
+                    android:fontFamily="@font/circular_std" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Switch between light and dark theme"
+                    android:textSize="12sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:fontFamily="@font/proxima_nova" />
+
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/themeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

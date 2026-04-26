@@ -5,55 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".activitys.ContactUs">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarcontactus"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:elevation="4dp"
+        android:layout_height="56dp"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:title="Contact Us"
+        app:titleTextAppearance="@style/Quantex.TextAppearance.TitleLarge"
+        app:titleTextColor="@color/on_surface"
         app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:padding="20dp">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="allaccept101@gmail.com"
-        android:layout_marginBottom="10dp"
-        android:enabled="false"
-        android:padding="10dp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" android:hint="To" style="@style/Quantex.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="allaccept101@gmail.com" android:enabled="false"
+                android:fontFamily="@font/proxima_nova" android:textColor="@color/on_surface" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject"
-        android:id="@+id/subject"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" android:hint="Subject" style="@style/Quantex.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subject" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova" android:textColor="@color/on_surface" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Message"
-        android:maxLines="4"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/message" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" android:hint="Message" style="@style/Quantex.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:maxLines="4" android:fontFamily="@font/proxima_nova" android:textColor="@color/on_surface" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Send"
-        android:id="@+id/send"/>
+        <Button
+            android:id="@+id/send"
+            style="@style/Quantex.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Send Message"
+            android:textAllCaps="false" />
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

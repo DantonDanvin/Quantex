@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ======== Brand Primary ======== -->
+    <color name="primary">#A29BFE</color>
+    <color name="primary_variant">#7C6EF0</color>
+    <color name="on_primary">#1A1A2E</color>
+
+    <!-- ======== Brand Secondary / Accent ======== -->
+    <color name="secondary">#00D2FF</color>
+    <color name="secondary_variant">#00B4D8</color>
+    <color name="on_secondary">#1A1A2E</color>
+
+    <!-- ======== Surface & Background ======== -->
+    <color name="surface">#1E2A4A</color>
+    <color name="surface_variant">#16213E</color>
+    <color name="surface_card">#1E2A4A</color>
+    <color name="surface_elevated">#243B6A</color>
+    <color name="background">#0F0F23</color>
+    <color name="on_surface">#E8E8E8</color>
+    <color name="on_surface_variant">#9CA3AF</color>
+
+    <!-- ======== Status Colors ======== -->
+    <color name="gain">#00E676</color>
+    <color name="gain_bg">#2600E676</color>
+    <color name="loss">#FF5252</color>
+    <color name="loss_bg">#26FF5252</color>
+
+    <!-- ======== Coin Item Gradients ======== -->
+    <color name="card_gradient_start">#1E2A4A</color>
+    <color name="card_gradient_end">#16213E</color>
+
+    <!-- ======== Auth Gradient ======== -->
+    <color name="auth_gradient_start">#0F0F23</color>
+    <color name="auth_gradient_center">#1A1A2E</color>
+    <color name="auth_gradient_end">#16213E</color>
+
+    <!-- ======== Splash ======== -->
+    <color name="splash_bg">#0F0F23</color>
+
+    <!-- ======== Navigation ======== -->
+    <color name="bottom_nav_bg">#1A1A2E</color>
+    <color name="bottom_nav_active">#A29BFE</color>
+    <color name="bottom_nav_inactive">#6B7280</color>
+    <color name="bottom_nav_indicator">#33A29BFE</color>
+
+    <!-- ======== Chart ======== -->
+    <color name="chart_line">#A29BFE</color>
+    <color name="chart_fill">#33A29BFE</color>
+    <color name="chart_bg">#16213E</color>
+
+    <!-- ======== Input Fields ======== -->
+    <color name="input_stroke">#374151</color>
+    <color name="input_stroke_focused">#A29BFE</color>
+    <color name="input_bg">#1E2A4A</color>
+    <color name="input_hint">#6B7280</color>
+
+    <!-- ======== Divider / Line ======== -->
+    <color name="divider">#2D3748</color>
+
+    <!-- ======== Shimmer ======== -->
+    <color name="shimmer">#2D3748</color>
+    <color name="shimmer_base">#1E2A4A</color>
+    <color name="shimmer_highlight">#243B6A</color>
+
+    <!-- ======== Dialog ======== -->
+    <color name="dialog_bg">#1E2A4A</color>
+    <color name="dialog_overlay">#CC000000</color>
+
+    <!-- ======== Misc ======== -->
+    <color name="text_primary">#E8E8E8</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_disabled">#4B5563</color>
+
+    <!-- ======== Buy / Sell Buttons ======== -->
+    <color name="buy_button">#00E676</color>
+    <color name="sell_button">#FF5252</color>
+
+    <!-- ======== Drawer ======== -->
+    <color name="drawer_header_start">#1A1A2E</color>
+    <color name="drawer_header_end">#0F3460</color>
+
+    <!-- ======== Time Chip ======== -->
+    <color name="chip_selected_bg">#A29BFE</color>
+    <color name="chip_selected_text">#1A1A2E</color>
+    <color name="chip_default_bg">#1E2A4A</color>
+    <color name="chip_default_text">#9CA3AF</color>
+</resources>
